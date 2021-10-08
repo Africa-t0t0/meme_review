@@ -1,0 +1,13 @@
+ """CREATE USER %s WITH PASSWORD %s;
+            CREATE DATABASE %s;
+            GRANT ALL PRIVILEGES ON DATABASE %s TO %s;
+            \connect %s %s
+            BEGIN;
+            CREATE TABLE memes (
+                    meme_id integer NOT NULL,
+                    meme_name varchar,
+                    meme_ranking integer,
+                    meme_story text,
+                    meme_image text
+                );
+            COMMIT;"""

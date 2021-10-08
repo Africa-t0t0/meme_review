@@ -1,0 +1,130 @@
+.App {
+  background-color: #000000;
+  /* border: 1px solid red;  */
+  min-height: 100vh;
+  color: white;
+  padding: 20px;
+  
+}
+
+img {
+  width: 30%;
+  height: auto;
+}
+
+img2 {
+  width: 30%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper{
+  width: 30%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  padding: 10px;
+
+}
+
+.title{
+  text-decoration: underline gold wavy;
+}
+
+.memename{
+  text-decoration: underline rgb(255, 255, 255);
+  font-size: 12ch;
+}
+
+.navegador{
+  font-size: 25px;
+}
+
+.valorar{
+  margin-left: 420px;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+
+}
+.flex-item + .flex-item {
+  margin-left: 10px;
+  vertical-align: middle;
+
+}
+.button {
+  margin-top: 15px;
+  background-color: red;
+  border: white;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.centered {
+  margin: 0;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+  
+}
+
+.meme{
+  background-color: rgb(20, 0, 0);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 62,5%;
+}
+
+
+
+.form__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 30%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}

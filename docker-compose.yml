@@ -1,0 +1,37 @@
+# Trabajaremos con la versión 3 docker
+version: '3.7'
+
+# Creamos los servicios
+services:
+  mydb:                                 # Creamos el servicios mydb para identificar la imagen
+    image: postgres               # Usamos la imagen postgresql en la versión 12
+    volumes:
+      - postgresdb:/var/lib/postgresql  # Crearemos un volumen para almacenar los datos de la db
+    ports:                               
+      - "5432:5432"                     # Habilitamos el puerto 5432 para acceder a la db
+    environment:                        # Creamos las variables del usuario contraseña y base de datos 
+      POSTGRES_USER: admin              #   que se crea cuando inicia docker
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: arqui
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+  backend:
+    image: backend
+    ports:
+      - "5000:5000"
+    environment:
+      - HOST=192.168.0.6
+      - PORT=5432
+      - DATABASE=arqui
+      - USER=admin
+      - PASSWORD=admin
+  frontend:
+    image: frontend
+    ports:
+      - "3000:3000"
+
+     
+      
+volumes:                                # Creamos y asignamos el volumen de docker
+  postgresdb:
+    driver: local
