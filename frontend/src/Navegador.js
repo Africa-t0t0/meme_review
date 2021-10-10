@@ -3,8 +3,14 @@ import { useHistory } from "react-router-dom";
 
 // CONEX
 
+
+
 function Navegador() {
 
+  useEffect(() => {
+    fetch("/create")
+  })
+  
     const history = useHistory();
 
     const routeChange = () =>{ 
@@ -27,6 +33,7 @@ function Navegador() {
                     Ver memes
                   </button>
                 <button color="link" className="px-0" onClick={routeChange2}>Subir memes</button>
+
             ...
         </div>
     );
