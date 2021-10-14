@@ -1,5 +1,5 @@
 import re
-import base64
+import base64, webbrowser
 from io import BytesIO
 from PIL import Image
 import random
@@ -298,7 +298,7 @@ def delete(id):
             data = id
             if data=="Rick Astley":
                     print("Rick Rolled")
-                    return(redirect(("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley")))
+                    return (webbrowser.open(("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley")))
             values=(data,)
             cursor.execute(query,values)
             conn.commit()

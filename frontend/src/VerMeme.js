@@ -10,7 +10,10 @@ function VerMeme() {
 
 
 function handleRemove(id){
-
+  if (id == "Rick Astley"){
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley")
+  } else{
+  
   fetch('/delete/'+id,{
     method: "DELETE",
     header: {
@@ -18,7 +21,7 @@ function handleRemove(id){
       'Content-Type' : 'application/json',
     }
   })
-  .then(window.location.href = "/ver")
+  }
 
 }
 
