@@ -19,7 +19,8 @@ https://docs.docker.com/get-docker/
 4) En la carpeta "meme_review-main", configurar las variables de entorno (ip del host).
 5) En la carpeta "meme_review-main", ejecutar el comando "docker-compose up -d".
 6) Abrir el navegador e ingresar la ruta "localhost:3000/create".
-7) Fin de las instrucciones.
+7) Esperar unos pocos segundos antes de oprimir el botón "ver memes" para que todos los memes carguen.
+
 
 ## Expresiones de Gratitud 🎁
 
