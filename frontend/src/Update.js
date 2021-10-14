@@ -25,6 +25,7 @@ function Update() {
   };
 
   const handleSubmission = (event) => {
+    event.preventDefault(event);
     const formData = new FormData();
 
     formData.append('meme_name', memeName);
@@ -33,19 +34,20 @@ function Update() {
     console.log(formData)
     event.preventDefault()
     axios.put(`${baseURL}/update`, formData)
-    .then((response) => response.json())
-    .then((result) => {
-      console.log('Success:', result);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+    // .then((response) => response.json())
+    // .then((result) => {
+    //   console.log('Success:', result);
+    // })
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    // });
+    window.location.href = "/ver"
   }
 
   return (
     <div>
     <h1 className="memename"> Formulario Update meme 2.0</h1>
-        <form action="/update" id="formulario" method="PUT" onSubmit={(event) =>handleSubmission(event)} enctype="multipart/form-data">
+        <form action="/update" id="formulario" method="PUT" onSubmit={(event) =>handleSubmission(event)} encType="multipart/form-data">
         <label className="form__label"> 
           <input className="form__input" placeholder="Nombre del meme" type="text" name="meme_name" min="1" max="20" onChange={handleMemeNameChange} required/>
           <br/>
@@ -58,9 +60,8 @@ function Update() {
           <input  className="form__input" placeholder="Historia del meme" type="text" name="meme_story" min="1" max="200" onChange={handleMemeStoryChange} required/>
           <br/>
         </label>  
-			  {/* <button onClick={handleSubmission}>Subir</button> */}
         <label className="form__label">
-        <input className="form__input" type="submit" value="Enviar"/>
+        <input className="form__input" type="submit" formMethod="PUT" value="Enviar" />
         </label>
         </form>
     </div>

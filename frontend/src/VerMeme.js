@@ -1,12 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Rating, RatingView } from 'react-simple-star-rating'
 import axios from "axios";
-const baseURL = 'http://localhost:5000'
+const baseURL = 'http://backend:5000'
 
 // antiguo CONEX, ahora es VER
 //ward: la cosa que puse para rankear se comparte entre todas las imágenes, no es única
 
 function VerMeme() {
+
+
+function handleRemove(id){
+
+  fetch('/delete/'+id,{
+    method: "DELETE",
+    header: {
+      'Accept' : 'application/json',
+      'Content-Type' : 'application/json',
+    }
+  })
+  .then(window.location.href = "/ver")
+
+}
+
 
   const [selectedFile, setSelectedFile] = useState();
   const [memeName, setMemeName] = useState()
@@ -84,6 +99,7 @@ const handleSub2 = () => {
 }
 
 
+
 ////////////////////////////////////////////////////////////
   return (
     <div className="centered">
@@ -103,9 +119,10 @@ const handleSub2 = () => {
         <br/>
         <h2 className="wrapper">{meme.meme_story}</h2>
         <div className="flex">
-        <form className="flex-item" action="" method="POST"><button className="button" name="meme_name" value={meme.meme_name}>Delete this</button></form>
-        
-        <form className="flex-item" action="/update_meme"  method="POST" ><button className="button"  name="meme_name" value={meme.meme_name}>Update meme</button></form>
+        {/* <form className="flex-item" action="/ver" method="POST"><button className="button" name="meme_name" value={meme.meme_name}>Delete this</button></form> */}
+        <form className="flex-item" action="/delete" method="DELETE"><button className="button" name="meme_name" onClick={()=> handleRemove(meme.meme_name)} value={meme.meme_name}>Delete this</button></form>
+
+        <form className="flex-item" action="/update_meme"  method="POST" ><button className="button"  name="meme_name"  value={meme.meme_name}>Update meme</button></form>
       </div>
       </div>
  )

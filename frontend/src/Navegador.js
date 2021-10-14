@@ -7,9 +7,6 @@ import { useHistory } from "react-router-dom";
 
 function Navegador() {
 
-  useEffect(() => {
-    fetch("/create")
-  })
   
     const history = useHistory();
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const baseURL = 'http://localhost:5000'
+const baseURL = 'http://backend:5000'
 
 
 

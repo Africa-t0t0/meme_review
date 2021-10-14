@@ -5,6 +5,7 @@ RUN apt-get update \
 COPY requirements.txt /tmp/
 WORKDIR /app
 COPY backend.py /app/.
+COPY /memes/ /app/memes 
 RUN pip install --upgrade pip
 RUN pip install --requirement /tmp/requirements.txt
 CMD ["python3","/app/backend.py"]

@@ -4,6 +4,7 @@ import Componente0 from './Navegador.js'
 import VerMeme from './VerMeme.js'
 import SubirArchivo from './SubirArchivo.js'
 import Update from './Update';
+import Create from './Create';
 
 
 import { BrowserRouter as Router, Route, Redirect, Link, useHistory } from "react-router-dom";
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/update">
           <Update/>
+        </Route>
+        <Route path="/create">
+          <Create/>
         </Route>
         <Route path="/">
           <Navegador/>
