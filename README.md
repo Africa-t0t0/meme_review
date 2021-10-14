@@ -23,7 +23,7 @@ https://docs.docker.com/get-docker/
 
 ## Expresiones de Gratitud 🎁
 
-Agradecer a mi compañero Yui Zhou Chen por ayudarme con el frontend, maestro de React.
+Agradecer a mi compañero Yui Zhou Chen por ayudarme con el Frontend y Git, maestro de React.
 
 
 
